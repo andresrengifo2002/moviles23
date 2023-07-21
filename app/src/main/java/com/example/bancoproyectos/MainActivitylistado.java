@@ -140,7 +140,6 @@ public class MainActivitylistado extends AppCompatActivity {
 
 
 
-
     private void obtenerDatos() {
         ProyectosApiService service = retrofit.create(com.example.bancoproyectos.api.ProyectosApiService.class);
 
@@ -154,7 +153,6 @@ public class MainActivitylistado extends AppCompatActivity {
                         Listadoproyectos p= proyectos.get(i);
                         Log.e(TAG, "products: " + p.getNombre_proyecto());
                     }
-
                     listaListadoProyectosAdapter.add((ArrayList<Listadoproyectos>) proyectos);
                 }
             }
@@ -163,8 +161,6 @@ public class MainActivitylistado extends AppCompatActivity {
             public void onFailure(Call<List<Listadoproyectos>> call, Throwable t) {
 
             }
-
-
 
         });
     }

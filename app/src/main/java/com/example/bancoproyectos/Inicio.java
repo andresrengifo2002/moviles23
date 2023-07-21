@@ -113,6 +113,7 @@ public class Inicio extends AppCompatActivity {
              }
          });
     }
+
    /* public  void incio(View v){
         loginApiService=retrofit.create(LoginApiService.class);
         String usern =etu.getText().toString();
@@ -125,20 +126,12 @@ public class Inicio extends AppCompatActivity {
                     Login login = response.body();
                     String token=login.getAccess_token();
                     Toast.makeText(Inicio.this,token,Toast.LENGTH_LONG).show();
-
-
                 }
-
             }
-
             @Override
             public void onFailure(Call<Login> call, Throwable t) {
-
-
             }
         });
-
-
     }*/
 
 
@@ -147,17 +140,13 @@ public class Inicio extends AppCompatActivity {
 
                 Intent I = new Intent(Inicio.this, MenuPrincipal.class);
                 startActivity(I);
-
-
-
-
-
-
-
 }*/
+    public void function(){
+
+    }
 }
 
-//}
+
 
 
 

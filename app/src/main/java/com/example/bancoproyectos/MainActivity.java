@@ -15,7 +15,6 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
 
-
     private ImageView ivImage;
 
     private boolean condicionCumplida = true;

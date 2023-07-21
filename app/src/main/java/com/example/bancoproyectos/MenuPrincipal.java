@@ -65,7 +65,6 @@ public class MenuPrincipal extends AppCompatActivity {
                         startActivity(in);
                         return true;
 
-
                     default:
                         return false;
                 }

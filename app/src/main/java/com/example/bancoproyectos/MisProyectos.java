@@ -50,8 +50,6 @@ public class MisProyectos extends AppCompatActivity {
         startActivity(intent);
     }
     public void onClick(View view) {
-
-
         Intent intent = new Intent(this, MenuPrincipal.class);
         startActivity(intent);
     }
