@@ -10,8 +10,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -46,6 +48,7 @@ public class MainActivitylistado extends AppCompatActivity {
 
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+    SharedPreferences sharedPreferences;
 
 
 
@@ -54,6 +57,7 @@ public class MainActivitylistado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
         recyclerView = findViewById(R.id.card_recycler_view);
+
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -110,6 +114,28 @@ public class MainActivitylistado extends AppCompatActivity {
             }
         });
     }
+    private void signOut() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("accessToken");
+        editor.apply();
+
+        Intent intent = new Intent(MainActivitylistado.this, MainActivitylistado.class);
+        startActivity(intent);
+        finish();
+
+
+        sharedPreferences = getSharedPreferences("MyProfy", MODE_PRIVATE);
+        String token = sharedPreferences.getString("accessToken", null);
+
+        if (token != null) {
+            Intent inten = new Intent();
+            startActivity(inten);
+            finish();
+
+        }
+    }
+        
+    
 
     private void remplaceFragment(Fragment fragment){
         FragmentManager frgManager = getSupportFragmentManager();
